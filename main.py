@@ -5,8 +5,10 @@ from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse, abort
 from http_status import HttpStatus
 from constants import connectionString, hostname
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 @app.route('/api')
